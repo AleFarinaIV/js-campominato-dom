@@ -63,3 +63,7 @@ button {
 .selected {
     background-color: rgb(91, 173, 194);
 }
+
+.selected-bomb {
+    background-color: rgb(255, 0, 0);
+}

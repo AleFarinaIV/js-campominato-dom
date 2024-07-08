@@ -55,10 +55,23 @@ button.addEventListener('click', function() /*handlerClick(event)*/ {
             // converto il numero progressivo nel quadrato in un numero 
             const squareNumber = parseInt(this.innerText, 10);
 
-            /*il quadrato selezionato dall'utente dovrà cambiare colore,
-            al momento del click aggiungo/tolgo la classe selected*/
-            this.classList.toggle('selected')
-            console.log(this.innerText)
+            if (bombPositions.includes(squareNumber)) {
+                // se si clicca su una bomba, il quadrato viene colorato di rosso
+                this.classList.toggle('selected-bomb')
+                console.log('numero quadrato:', squareNumber, 'numero bomba:', squareNumber)
+                alert('Hai perso! Il tuo punteggio è ' + score)
+                alert('Premi di nuovo il tatso "Play" per ricominciare a giocare!')
+            } else {
+                /*il quadrato selezionato dall'utente dovrà cambiare colore,
+                al momento del click aggiungo/tolgo la classe selected*/
+                this.classList.toggle('selected')
+                score++
+                console.log(this.innerText)
+                if (score === 84) {
+                    alert('Hai vinto! Il tuo punteggio è ' + score)
+                    alert('Premi di nuovo il tatso "Play" per ricominciare a giocare!')
+                }
+            }
         })
     }
     // event.target.removeEventListener('click', handlerClick);
