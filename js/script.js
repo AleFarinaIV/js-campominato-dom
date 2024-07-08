@@ -28,6 +28,15 @@ button.addEventListener('click', function() /*handlerClick(event)*/ {
     // counter punteggio
     let score = 0
     
+    // utilizzo un ciclo WHILE per generare le posizioni delle bombe (non ripetute)
+    while (bombPositions.length < 16) {
+        let numPositions = Math.floor(Math.random() * 100 + 1)
+        if (!bombPositions.includes(numPositions)) {
+            bombPositions.push(numPositions)
+        }
+    }
+    console.log(bombPositions)
+
     // utilizzo un ciclo FOR di 100 iterazioni per creare la griglia di gioco 10x10
     for (let i = 0; i < 100; i++) {
 
