@@ -52,6 +52,9 @@ button.addEventListener('click', function() /*handlerClick(event)*/ {
         // creo un evento click per il quadrato creato
         fieldSquare.addEventListener('click', function () {
 
+            // converto il numero progressivo nel quadrato in un numero 
+            const squareNumber = parseInt(this.innerText, 10);
+
             /*il quadrato selezionato dall'utente dovrà cambiare colore,
             al momento del click aggiungo/tolgo la classe selected*/
             this.classList.toggle('selected')
