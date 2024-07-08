@@ -1,5 +1,5 @@
 //Definisco la funzione che creerà i quadrati
-function createSquare(){
+function createSquare() {
     // dichiaro una variabile per creare un elemento all'interno del DOM
     let currentElement = document.createElement('div')
 
@@ -21,6 +21,12 @@ button.addEventListener('click', function() /*handlerClick(event)*/ {
 
     // svuotare la griglia per ricominciare
     grid.innerHTML = '';
+
+    // creo un array vuoto per le posizioni delle bombe
+    let bombPositions = [];
+
+    // counter punteggio
+    let score = 0
     
     // utilizzo un ciclo FOR di 100 iterazioni per creare la griglia di gioco 10x10
     for (let i = 0; i < 100; i++) {
